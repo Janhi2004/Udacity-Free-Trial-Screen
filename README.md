@@ -1,4 +1,4 @@
-# Free Trial Screener Experiment
+# 🤖 Free Trial Screener
 
 ## 👩‍⚕️ Goals of the Project
 The primary goal of this experiment is to assess the impact of a new course enrollment flow on student behavior at Udacity. Specifically, we tested whether asking students about their available time commitment before starting the free trial could reduce the number of students who drop out of the free trial due to lack of time. By setting clearer expectations upfront, the experiment aimed to:
