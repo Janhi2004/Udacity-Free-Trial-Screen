@@ -1,32 +1,37 @@
-# 🤖 Facial Recognition Project  
-## A Machine Learning Approach to Recognize Faces  
+# Free Trial Screener Experiment - README
 
-### 👩‍⚕️ Goals of the Project  
-The goal of this project was to develop a facial recognition system capable of accurately identifying and verifying individuals from images. The project aimed to leverage machine learning and deep learning techniques to recognize facial features, track multiple faces in real-time, and match them against a pre-trained database. This project is useful in applications such as security systems, access control, and social media tagging.
+## Goals of the Project
+The primary goal of this experiment is to assess the impact of a new course enrollment flow on student behavior at Udacity. Specifically, we tested whether asking students about their available time commitment before starting the free trial could reduce the number of students who drop out of the free trial due to lack of time. By setting clearer expectations upfront, the experiment aimed to:
+1. Reduce the number of frustrated students who leave the free trial.
+2. Maintain or improve student retention through the free trial period and beyond.
+3. Evaluate if filtering out students who cannot commit enough time helps improve conversion rates while maintaining or improving user experience.
 
-### #️⃣ Conclusions  
-- **Model Performance**: The project successfully utilized convolutional neural networks (CNNs) and pre-trained models (like VGGFace) to perform facial recognition with high accuracy. The model achieved a recognition accuracy of over 95% on the test dataset.
-- **Real-Time Application**: The system was capable of recognizing faces in real-time from webcam footage, making it applicable for live verification and security systems.
-- **Limitations**: While the model performed well under controlled conditions, it faced challenges when identifying faces under varying lighting conditions or occlusions, emphasizing the need for further enhancements in robustness.
+## Conclusions
+The experiment findings offer valuable insights:
+- **Gross Conversion**: There was a decrease in gross conversion in the treatment group, as expected. By filtering students based on time commitment, some users chose not to proceed, which led to fewer enrollments.
+- **Retention**: Retention in the treatment group increased. The filtering process helped ensure that only students who were likely to commit enough time continued in the free trial, leading to higher chances of them staying enrolled and eventually making a payment.
+- **Net Conversion**: This metric showed mixed results, as it combines both gross conversion and retention. While gross conversion decreased, retention improved, leading to an unclear overall trend for net conversion.
 
-### 🧠 Challenges  
-- **Data Quality**: One of the challenges was ensuring high-quality and diverse datasets for training the facial recognition model. Facial images had to be well-labeled and cover various angles, lighting conditions, and facial expressions.
-- **Real-Time Processing**: Implementing real-time facial recognition with low latency was another challenge, as it required optimization techniques to handle video streams efficiently without compromising accuracy.
-- **Ethical Considerations**: The ethical implications of facial recognition technology, particularly regarding privacy and bias, were addressed by ensuring the system was used responsibly and with informed consent.
+The hypothesis that setting clearer expectations for students upfront would reduce free trial drop-off and improve retention held true for the most part. However, gross conversion decreased due to some students self-selecting out after realizing they could not commit enough time.
 
-### 👩‍💻 Techniques Used  
-- **Convolutional Neural Networks (CNNs)**: CNNs were used as the core technique for facial feature extraction and recognition, with layers designed to learn from image pixel patterns and structures.
-- **Transfer Learning**: Pre-trained models like VGGFace, ResNet, and Inception were used to leverage pre-learned facial features, reducing the amount of training data required and accelerating the training process.
-- **Face Detection**: OpenCV's Haar cascades and Dlib’s facial landmark detector were used for face detection, ensuring that faces were accurately located within images before recognition.
-- **Face Embeddings**: We used face embeddings, which represent faces as vectors in a high-dimensional space, making it easier to compare and match faces by calculating distances between them.
+## Challenges
+- **Multiple Metrics**: Analyzing multiple metrics (gross conversion, retention, net conversion) introduced complexity in understanding the overall impact. While the retention metric showed positive results, the decrease in gross conversion raised questions about the long-term effectiveness of the change.
+- **External Factors**: The presence of large spikes in pageviews and changes in click-through rate during the experiment period (e.g., Oct 24th) could have influenced results. This required additional analysis to ensure the results were not skewed by external traffic factors.
+- **Time Commitment Subjectivity**: The question regarding available time commitment (5 or more hours per week) might have been interpreted differently by students, leading to some self-selection bias. Some students who could have managed the course might have opted out prematurely due to this prompt.
 
-### 🔑 Key Takeaways  
-- **Deep Learning for Vision**: Gained practical experience with CNNs and transfer learning, showing how pre-trained models can be adapted for specific tasks like facial recognition.
-- **Optimizing Real-Time Systems**: Learned how to optimize machine learning models for real-time applications, a critical skill for building production-ready facial recognition systems.
-- **Ethical Awareness**: Recognized the importance of considering the ethical implications of facial recognition technologies, especially related to privacy, fairness, and bias.
+## Techniques Used
+- **A/B Testing**: The experiment used a controlled A/B testing design, where users were randomly assigned to either the treatment (with the new screener) or control group.
+- **Sanity Checks**: We performed several sanity checks to ensure the integrity of the data, including checking the distribution of clicks, cookies, and click-through probability between the control and experiment groups.
+- **Statistical Analysis**: We used z-tests to check for statistical significance of the observed changes in key metrics (gross conversion, retention, and net conversion). Practical significance was also considered, with a focus on whether observed changes met the business requirements.
+- **Data Visualization**: Visual tools were used to track trends in key metrics, identify anomalies (e.g., spikes in pageviews), and ensure that the data was consistent and valid for analysis.
 
-### 🔖 Future Work  
-- **Enhancing Model Robustness**: The model's performance could be improved by incorporating more diverse and higher-quality training data to handle variations in lighting, angles, and occlusions.
-- **Integration with IoT**: Future work could involve integrating the facial recognition system with IoT devices for applications like automated security doors or personalized services.
-- **Bias Reduction**: Addressing potential biases in facial recognition systems by ensuring more balanced and representative datasets across different demographics.
-- **Privacy Considerations**: Developing privacy-preserving methods like on-device processing and encryption to mitigate security risks and protect individuals' data.
+## Key Takeaways
+- **Clearer Expectations Matter**: Setting clearer expectations about time commitment helped improve retention, but it also led to a decrease in gross conversion. This suggests that providing upfront information about course demands can help improve the student experience but may deter some potential enrollees.
+- **Balancing Enrollment vs. Retention**: There is a trade-off between gross conversion and retention. While reducing enrollments may lead to higher retention among those who proceed, it could also impact overall course engagement.
+- **Data Quality is Crucial**: Monitoring external factors such as traffic spikes and anomalies is critical to avoid skewed results. Regular sanity checks and careful data analysis are essential for drawing reliable conclusions from A/B tests.
+
+## Future Work
+- **Refining Time Commitment Question**: The time commitment question could be further refined to provide more flexibility or a better way to gauge student readiness without discouraging potential students.
+- **Extended Experiment Duration**: A longer experiment duration would help confirm the findings and eliminate any seasonality effects that might influence the data.
+- **Further Exploration of User Experience**: Qualitative data such as user surveys could help understand the reasons behind students’ decisions to opt-out or continue with the course after the free trial. This could provide deeper insights into the impact of course expectations on user behavior.
+- **Experimenting with Different Course Types**: Future experiments could involve testing this change across different types of courses (e.g., beginner vs. advanced) to see if the impact varies depending on course difficulty and time commitment.
